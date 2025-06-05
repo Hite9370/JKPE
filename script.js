@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 2,
+    slidesPerView: 3,
     centeredSlides: true,
     loop: true,
     spaceBetween: 24,
