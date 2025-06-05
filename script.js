@@ -1,8 +1,8 @@
   $(document).ready(function () {
     var swiper = new Swiper('.swiper-container', {
-      centeredSlides: true,
-      loop: true,
       slidesPerView: 2,
+      centeredSlides: true,
+      loop: true,      
       spaceBetween: 24,
       slideToClickedSlide: true,
       breakpoints: {
