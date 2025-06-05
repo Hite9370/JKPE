@@ -7,7 +7,7 @@
       slideToClickedSlide: true,
       breakpoints: {
         320: {
-          slidesPerView: 1,
+          spaceBetween: 16,
         }
       }
     });
