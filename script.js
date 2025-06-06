@@ -1,15 +1,10 @@
-$(document).ready(function() {
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 24,
-    slideToClickedSlide: true,
-      breakpoints: {
-        320: {
-          spaceBetween: 16,
-        }
-      }
-  });
+$('.slider').slick({
+    centerMode: true,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 1,
+    centerPadding: '20%',
 });
-
