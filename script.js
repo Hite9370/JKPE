@@ -7,4 +7,13 @@ $('.slider').slick({
     autoplaySpeed: 2000,
     slidesToShow: 1,
     centerPadding: '20%',
+    responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        centerPadding: '10%',
+      }
+    }
+  ]
+
 });
