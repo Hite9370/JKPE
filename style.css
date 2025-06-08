@@ -1,9 +1,17 @@
 .storie-collection-list-item{
     height: 560px !important;
 }
+.slick-slide{
+    height: 560px !important;
+}
+
 
 @media screen and (max-width: 991px) {
     .storie-collection-list-item{
         height: auto !important;
     }
+    
+.slick-slide{
+    height: auto !important;
+}
 }
