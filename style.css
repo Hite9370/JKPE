@@ -1,3 +1,9 @@
-/* .storie-collection-list-item{
-    height: 430px !important;
-} */
+.storie-collection-list-item{
+    height: 560px !important;
+}
+
+@media screen and (max-width: 991px) {
+    .storie-collection-list-item{
+        height: auto !important;
+    }
+}
