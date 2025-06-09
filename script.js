@@ -11,7 +11,7 @@ $('.slider').slick({
     {
       breakpoint: 480,
       settings: {
-        centerPadding: '10%',
+        centerPadding: '5%',
       }
     }
   ]
