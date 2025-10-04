@@ -1,19 +1,54 @@
-      /* Vertical anchor sections (kept stacked for Scrollify to track) */
+
       .s-scroll {
-        height: 100vh; /* important: full viewport height for each anchor */
+        height: 100vh;
       }
 
-      /* Fixed horizontal panel strip (visual) */
-      .h-panels {
+      /* Layout container */
+      .scroll-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+      /* LEFT TEXT SIDE */
+      .left-text-wrapper {
         position: fixed;
         top: 0;
         left: 0;
-        width: 300vw; /* 3 panels -> 3 * 100vw */
+        width: 40vw;
+        height: 100vh;
+        padding: 6vh 4vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        background: #111;
+        z-index: 5;
+      }
+
+      .left-text-wrapper h2 {
+        font-size: 2rem;
+        margin: 1em 0 0.5em;
+      }
+
+      .left-text-wrapper p {
+        font-size: 1rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* RIGHT PANELS CONTAINER */
+      .h-panels {
+        position: fixed;
+        top: 0;
+        left: 40vw; /* start beside text */
+        width: 300vw; /* 3 panels side by side */
         height: 100vh;
         display: flex;
-        transition: transform 700ms cubic-bezier(0.22, 0.9, 0.35, 1);
+        transition: transform 800ms cubic-bezier(0.22, 0.9, 0.35, 1);
         will-change: transform;
-        z-index: 10;
+        z-index: 1;
+        transform: translateX(0);
       }
 
       .h-panel {
@@ -23,7 +58,8 @@
         align-items: center;
         justify-content: center;
         font-size: 3rem;
-        color: white;
+        color: #fff;
+        flex-shrink: 0;
       }
 
       .p1 {
@@ -36,36 +72,7 @@
         background: linear-gradient(135deg, #00c9ff, #92fe9d);
       }
 
-      /* active styling for panels (optional) */
-      .h-panel.active {
-        transform: scale(1.03);
-      }
-
-      /* navigation dots */
-      .dots {
-        position: fixed;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 20;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.45);
-        cursor: pointer;
-        outline: none;
-        border: 0;
-      }
-      .dot.active {
-        background: rgba(255, 255, 255, 1);
-        transform: scale(1.15);
-      }
-      /* Make the vertical anchors invisible (they are just anchors) */
-      .s-scroll {
-        pointer-events: none; /* don't interfere with panel clicks */
+      /* PREVIEW STATE (before scroll) */
+      body:not(.layout-active) .h-panels {
+        transform: translateX(-40vw); /* show all 3 panels as preview */
       }
