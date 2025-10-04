@@ -1,17 +1,71 @@
-.storie-collection-list-item{
-    height: 560px !important;
-}
-.slick-slide{
-    height: 560px !important;
-}
+      /* Vertical anchor sections (kept stacked for Scrollify to track) */
+      .s-scroll {
+        height: 100vh; /* important: full viewport height for each anchor */
+      }
 
+      /* Fixed horizontal panel strip (visual) */
+      .h-panels {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300vw; /* 3 panels -> 3 * 100vw */
+        height: 100vh;
+        display: flex;
+        transition: transform 700ms cubic-bezier(0.22, 0.9, 0.35, 1);
+        will-change: transform;
+        z-index: 10;
+      }
 
-@media screen and (max-width: 991px) {
-    .storie-collection-list-item{
-        height: auto !important;
-    }
-    
-.slick-slide{
-    height: auto !important;
-}
-}
+      .h-panel {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+      }
+
+      .p1 {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+      }
+      .p2 {
+        background: linear-gradient(135deg, #ff9966, #ff5e62);
+      }
+      .p3 {
+        background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      }
+
+      /* active styling for panels (optional) */
+      .h-panel.active {
+        transform: scale(1.03);
+      }
+
+      /* navigation dots */
+      .dots {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.45);
+        cursor: pointer;
+        outline: none;
+        border: 0;
+      }
+      .dot.active {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.15);
+      }
+      /* Make the vertical anchors invisible (they are just anchors) */
+      .s-scroll {
+        pointer-events: none; /* don't interfere with panel clicks */
+      }
