@@ -1,52 +1,45 @@
-  $(function () {
+ $(function () {
         var panels = $(".h-panel");
-        var panelsCount = panels.length;
         var $h = $("#hPanels");
+        var $h1 = $(".p1");
+        var $h2 = $(".p2");
+        var $h3 = $(".p3");
+        var $body = $("body");
 
-        // build dots
-        for (var i = 0; i < panelsCount; i++) {
-          $("#dots").append(
-            '<button class="dot" data-index="' +
-              i +
-              '" aria-label="Go to slide ' +
-              (i + 1) +
-              '"></button>'
-          );
-        }
-
-        // Scrollify init (vertical anchors must exist)
         $.scrollify({
           section: ".s-scroll",
-          scrollSpeed: 700,
-          offset: 0,
-          setHeights: true, // let Scrollify set anchors to 100vh
+          scrollSpeed: 800,
+          setHeights: true,
           touchScroll: true,
-          before: function (i, sections) {
-            // translate horizontal strip
-            $h.css("transform", "translateX(" + -i * 100 + "vw)");
-            // panel active class
-            panels.removeClass("active").eq(i).addClass("active");
-            // dot states
-            $(".dot").removeClass("active").eq(i).addClass("active");
+          offset: 0,
+          before: function (i) {
+            // i = scroll section index
+            if (i === 0) {
+              // show preview mode
+              $body.removeClass("layout-active");
+              $h.css("transform", "translateX(-40vw)");
+              $h1.css("transform", "translateX(0)");
+              $h.css("z-index", "0");
+              $h2.css("transform", "translateX(-40vw)");
+              $h3.css("transform", "translateX(-120vw)");
+            } else {
+              // activate full-screen horizontal mode
+              $body.addClass("layout-active");
+              $h.css("z-index", "99");
+              $h1.css("transform", "translateX(-40vw)");
+              $h.css("transform", "translateX(" + -(i - 1) * 100 + "vw)");
+              $h2.css("transform", "translateX(-40vw)");
+              $h3.css("transform", "translateX(-40vw)");
+            }
+
+            panels
+              .removeClass("active")
+              .eq(i - 1)
+              .addClass("active");
           },
           afterRender: function () {
-            // set initial states
-            $(".dot").first().addClass("active");
-            panels.first().addClass("active");
-
-            // dot click -> move to index
-            $(".dot").on("click", function () {
-              var idx = $(this).data("index");
-              $.scrollify.move(idx);
-            });
-
-            // keyboard left/right support (optional)
-            $(document).on("keydown", function (e) {
-              if (e.key === "ArrowRight") $.scrollify.next();
-              if (e.key === "ArrowLeft") $.scrollify.previous();
-            });
+            // start at preview state
+            $.scrollify.move("#anchor-0");
           },
         });
       });
-    
-    
