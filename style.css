@@ -55,6 +55,9 @@
       body:not(.layout-active) #hPanels {
         transform: translateX(-40vw);
       }
+.w-video iframe, .w-video object, .w-video embed{
+        position: relative !important;
+}
 
 
 
