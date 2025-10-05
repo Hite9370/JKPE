@@ -317,7 +317,7 @@ $(function () {
     $h.removeClass("fixed-layout").css("transform", "translateX(-40vw)").css("z-index", "0");
     $leftText.removeClass("fixed-layout");
 
-    $h1.css("transform", "translateX(0)");
+    $h1.css("transform", "translateX(-40vw)");
     $h2.css("transform", "translateX(-40vw)");
     $h3.css("transform", "translateX(-120vw)");
 
@@ -378,4 +378,5 @@ $(function () {
           },
         });
       });
+
 
