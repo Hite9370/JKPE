@@ -42,7 +42,8 @@
       }
 
       .h-panel {
-        width: 100vw;
+        width: 98vw;
+        margin: 0 2vw;
         height: 100vh;
         display: flex;
         align-items: center;
@@ -54,6 +55,7 @@
       body:not(.layout-active) #hPanels {
         transform: translateX(-40vw);
       }
+
 
 
 
