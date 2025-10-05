@@ -130,7 +130,160 @@
   //     });
 
 
-     $(function () {
+     // $(function () {
+     //    var panels = $(".h-panel");
+     //    var $h = $("#hPanels");
+     //    var $h1 = $(".p1");
+     //    var $h2 = $(".p2");
+     //    var $h3 = $(".p3");
+     //    var $body = $("body");
+     //    var $leftText = $(".left-text-wrapper");
+
+     //    // Initial preview state on load
+     //    $body.removeClass("layout-active");
+     //    $h.css("transform", "translateX(-40vw)");
+     //    $h1.css("transform", "translateX(0)");
+     //    $h2.css("transform", "translateX(-40vw)");
+     //    $h3.css("transform", "translateX(-120vw)");
+     //    $h.css("z-index", "0");
+
+     //    $.scrollify({
+     //      section: ".s-scroll",
+     //      scrollSpeed: 800,
+     //      setHeights: true,
+     //      touchScroll: true,
+     //      offset: 0,
+
+     //      //   before: function (i) {
+     //      //     // Reset all panels initially
+     //      //     panels.removeClass("active");
+
+     //      //     if (i === 0) {
+     //      //       // Step 0: Preview state
+     //      //       $body.removeClass("layout-active");
+     //      //       $h.removeClass("fixed-layout")
+     //      //         .css("transform", "translateX(-40vw)")
+     //      //         .css("z-index", "0");
+     //      //       $leftText.removeClass("fixed-layout");
+
+     //      //       $h1.css("transform", "translateX(0)");
+     //      //       $h2.css("transform", "translateX(-40vw)");
+     //      //       $h3.css("transform", "translateX(-120vw)");
+     //      //     } else if (i === 1) {
+     //      //       // Step 1: Intermediate state (still preview layout)
+     //      //       $body.addClass("layout-active");
+     //      //       $h.addClass("fixed-layout")
+     //      //         .css("transform", "translateX(-40vw)")
+     //      //         .css("z-index", "0");
+     //      //       $leftText.addClass("fixed-layout");
+
+     //      //       $h1.css("transform", "translateX(0vw)");
+     //      //       $h2.css("transform", "translateX(-40vw)");
+     //      //       $h3.css("transform", "translateX(-120vw)");
+
+     //      //       panels.eq(2).addClass("active"); // Optional: highlight panel 3 during intermediate
+     //      //     } else if (i === 2 || i === 3 || i === 4) {
+     //      //       // Step 2 & 3: Fixed layout active horizontal scroll
+     //      //       $body.addClass("layout-active");
+     //      //       $h.addClass("fixed-layout")
+     //      //         .css("transform", "translateX(" + -(i - 1) * 100 + "vw)")
+     //      //         .css("z-index", "99");
+     //      //       $leftText.addClass("fixed-layout");
+
+     //      //       $h1.css("transform", "translateX(60vw)");
+     //      //       $h2.css("transform", "translateX(60vw)");
+     //      //       $h3.css("transform", "translateX(60vw)");
+
+     //      //       panels.eq(i - 1).addClass("active");
+     //      //     } else {
+     //      //       $body.removeClass("layout-active");
+     //      //       $h.removeClass("fixed-layout")
+     //      //         .css("transform", "translateX(-40vw)")
+     //      //         .css("z-index", "0");
+     //      //       $leftText.removeClass("fixed-layout");
+
+     //      //       $h1.css("transform", "translateX(0)");
+     //      //       $h2.css("transform", "translateX(-40vw)");
+     //      //       $h3.css("transform", "translateX(-120vw)");
+     //      //     }
+     //      //   },
+
+     //      before: function (i) {
+     //        panels.removeClass("active");
+
+     //        if (i === 0) {
+     //          // Step 0: Preview state
+     //          $body.removeClass("layout-active");
+     //          $h.removeClass("fixed-layout")
+     //            .css("transform", "translateX(-40vw)")
+     //            .css("z-index", "0");
+     //          $leftText.removeClass("fixed-layout");
+
+     //          $h1.css("transform", "translateX(0)");
+     //          $h2.css("transform", "translateX(-40vw)");
+     //          $h3.css("transform", "translateX(-120vw)");
+     //        } else if (i === 1) {
+     //          // Step 1: Intermediate state (still preview layout)
+     //          $body.addClass("layout-active");
+     //          $h.addClass("fixed-layout")
+     //            .css("transform", "translateX(0vw)")
+     //            .css("z-index", "0");
+     //          $leftText.addClass("fixed-layout");
+
+     //          $h1.css("transform", "translateX(0vw)");
+     //          $h2.css("transform", "translateX(-80vw)");
+     //          $h3.css("transform", "translateX(-160vw)");
+
+     //          panels.eq(2).addClass("active");
+     //        } else if (i === 2 || i === 3 || i === 4) {
+     //          // Step 2 & 3: Fixed layout active horizontal scroll
+     //          $body.addClass("layout-active");
+     //          $h.addClass("fixed-layout")
+     //            .css("transform", "translateX(" + -(i - 1) * 100 + "vw)")
+     //            .css("z-index", "99");
+     //          $leftText.addClass("fixed-layout");
+
+     //          $h1.css("transform", "translateX(60vw)");
+     //          $h2.css("transform", "translateX(60vw)");
+     //          $h3.css("transform", "translateX(60vw)");
+
+     //          panels.eq(i - 1).addClass("active");
+     //        }
+     //        // else if (i === 5) {
+     //        //   // Step 4: After horizontal scroll section
+     //        //   // Remove fixed to allow scrolling to bottom-section
+     //        //   $body.removeClass("layout-active");
+     //        //   $h.removeClass("fixed-layout")
+     //        //     .css("transform", "translateX(-40vw)")
+     //        //     .css("z-index", "0");
+     //        //   $leftText.removeClass("fixed-layout");
+
+     //        //   $h1.css("transform", "translateX(0)");
+     //        //   $h2.css("transform", "translateX(-40vw)");
+     //        //   $h3.css("transform", "translateX(-120vw)");
+     //        // }
+     //        else {
+     //          // Fallback for any other index
+     //          $body.removeClass("layout-active");
+     //          $h.removeClass("fixed-layout")
+     //            .css("transform", "translateX(-40vw)")
+     //            .css("z-index", "0");
+     //          $leftText.removeClass("fixed-layout");
+
+     //          $h1.css("transform", "translateX(0)");
+     //          $h2.css("transform", "translateX(-40vw)");
+     //          $h3.css("transform", "translateX(-120vw)");
+     //        }
+     //      },
+
+     //      afterRender: function () {
+     //        $.scrollify.move("#anchor-0"); // Start at preview
+     //      },
+     //    });
+     //  });
+
+
+$(function () {
         var panels = $(".h-panel");
         var $h = $("#hPanels");
         var $h1 = $(".p1");
@@ -154,132 +307,75 @@
           touchScroll: true,
           offset: 0,
 
-          //   before: function (i) {
-          //     // Reset all panels initially
-          //     panels.removeClass("active");
+       before: function (i) {
+  // Reset all panels initially
+  panels.removeClass("active");
 
-          //     if (i === 0) {
-          //       // Step 0: Preview state
-          //       $body.removeClass("layout-active");
-          //       $h.removeClass("fixed-layout")
-          //         .css("transform", "translateX(-40vw)")
-          //         .css("z-index", "0");
-          //       $leftText.removeClass("fixed-layout");
+  if (i === 0) {
+    // Step 0: Preview state
+    $body.removeClass("layout-active");
+    $h.removeClass("fixed-layout").css("transform", "translateX(-40vw)").css("z-index", "0");
+    $leftText.removeClass("fixed-layout");
 
-          //       $h1.css("transform", "translateX(0)");
-          //       $h2.css("transform", "translateX(-40vw)");
-          //       $h3.css("transform", "translateX(-120vw)");
-          //     } else if (i === 1) {
-          //       // Step 1: Intermediate state (still preview layout)
-          //       $body.addClass("layout-active");
-          //       $h.addClass("fixed-layout")
-          //         .css("transform", "translateX(-40vw)")
-          //         .css("z-index", "0");
-          //       $leftText.addClass("fixed-layout");
+    $h1.css("transform", "translateX(0)");
+    $h2.css("transform", "translateX(-40vw)");
+    $h3.css("transform", "translateX(-120vw)");
 
-          //       $h1.css("transform", "translateX(0vw)");
-          //       $h2.css("transform", "translateX(-40vw)");
-          //       $h3.css("transform", "translateX(-120vw)");
+  } else if (i === 1) {
+    // Step 1: Intermediate state (still preview layout)
+    $body.addClass("layout-active");
+    $h.addClass("fixed-layout").css("transform", "translateX(-40vw)").css("z-index", "0");
+    $leftText.addClass("fixed-layout");
 
-          //       panels.eq(2).addClass("active"); // Optional: highlight panel 3 during intermediate
-          //     } else if (i === 2 || i === 3 || i === 4) {
-          //       // Step 2 & 3: Fixed layout active horizontal scroll
-          //       $body.addClass("layout-active");
-          //       $h.addClass("fixed-layout")
-          //         .css("transform", "translateX(" + -(i - 1) * 100 + "vw)")
-          //         .css("z-index", "99");
-          //       $leftText.addClass("fixed-layout");
+    $h1.css("transform", "translateX(0vw)");
+    $h2.css("transform", "translateX(-40vw)");
+    $h3.css("transform", "translateX(-120vw)");
 
-          //       $h1.css("transform", "translateX(60vw)");
-          //       $h2.css("transform", "translateX(60vw)");
-          //       $h3.css("transform", "translateX(60vw)");
+    // Optional highlight panel 1 or 2 here if you want
+    panels.eq(0).addClass("active"); // Highlight Panel 1
 
-          //       panels.eq(i - 1).addClass("active");
-          //     } else {
-          //       $body.removeClass("layout-active");
-          //       $h.removeClass("fixed-layout")
-          //         .css("transform", "translateX(-40vw)")
-          //         .css("z-index", "0");
-          //       $leftText.removeClass("fixed-layout");
+  } else if (i === 2) {
+    // Step 2: Show Panel 2 fully in fixed layout
+    $body.addClass("layout-active");
+    $h.addClass("fixed-layout").css("transform", "translateX(-100vw)").css("z-index", "99");
+    $leftText.addClass("fixed-layout");
 
-          //       $h1.css("transform", "translateX(0)");
-          //       $h2.css("transform", "translateX(-40vw)");
-          //       $h3.css("transform", "translateX(-120vw)");
-          //     }
-          //   },
+    $h1.css("transform", "translateX(60vw)");
+    $h2.css("transform", "translateX(60vw)");  // Panel 2 centered
+    $h3.css("transform", "translateX(60vw)");
 
-          before: function (i) {
-            panels.removeClass("active");
+    panels.eq(1).addClass("active"); // Highlight Panel 2
 
-            if (i === 0) {
-              // Step 0: Preview state
-              $body.removeClass("layout-active");
-              $h.removeClass("fixed-layout")
-                .css("transform", "translateX(-40vw)")
-                .css("z-index", "0");
-              $leftText.removeClass("fixed-layout");
+  } else if (i === 3) {
+    // Step 3: Show Panel 3 fully in fixed layout
+    $body.addClass("layout-active");
+    $h.addClass("fixed-layout").css("transform", "translateX(-100vw)").css("z-index", "99");
+    $leftText.addClass("fixed-layout");
 
-              $h1.css("transform", "translateX(0)");
-              $h2.css("transform", "translateX(-40vw)");
-              $h3.css("transform", "translateX(-120vw)");
-            } else if (i === 1) {
-              // Step 1: Intermediate state (still preview layout)
-              $body.addClass("layout-active");
-              $h.addClass("fixed-layout")
-                .css("transform", "translateX(0vw)")
-                .css("z-index", "0");
-              $leftText.addClass("fixed-layout");
+    $h1.css("transform", "translateX(60vw)");
+    $h2.css("transform", "translateX(-40vw)");
+    $h3.css("transform", "translateX(60vw)"); // Panel 3 centered
 
-              $h1.css("transform", "translateX(0vw)");
-              $h2.css("transform", "translateX(-80vw)");
-              $h3.css("transform", "translateX(-160vw)");
-
-              panels.eq(2).addClass("active");
-            } else if (i === 2 || i === 3 || i === 4) {
+    panels.eq(2).addClass("active"); // Highlight Panel 3
+  } else {
               // Step 2 & 3: Fixed layout active horizontal scroll
               $body.addClass("layout-active");
-              $h.addClass("fixed-layout")
-                .css("transform", "translateX(" + -(i - 1) * 100 + "vw)")
-                .css("z-index", "99");
+    $h.addClass("fixed-layout").css("transform", "translateX(-100vw)").css("z-index", "99");
+
               $leftText.addClass("fixed-layout");
 
               $h1.css("transform", "translateX(60vw)");
-              $h2.css("transform", "translateX(60vw)");
-              $h3.css("transform", "translateX(60vw)");
+              $h2.css("transform", "translateX(-40vw)");
+              $h3.css("transform", "translateX(-140vw)");
 
               panels.eq(i - 1).addClass("active");
             }
-            // else if (i === 5) {
-            //   // Step 4: After horizontal scroll section
-            //   // Remove fixed to allow scrolling to bottom-section
-            //   $body.removeClass("layout-active");
-            //   $h.removeClass("fixed-layout")
-            //     .css("transform", "translateX(-40vw)")
-            //     .css("z-index", "0");
-            //   $leftText.removeClass("fixed-layout");
+},
 
-            //   $h1.css("transform", "translateX(0)");
-            //   $h2.css("transform", "translateX(-40vw)");
-            //   $h3.css("transform", "translateX(-120vw)");
-            // }
-            else {
-              // Fallback for any other index
-              $body.removeClass("layout-active");
-              $h.removeClass("fixed-layout")
-                .css("transform", "translateX(-40vw)")
-                .css("z-index", "0");
-              $leftText.removeClass("fixed-layout");
-
-              $h1.css("transform", "translateX(0)");
-              $h2.css("transform", "translateX(-40vw)");
-              $h3.css("transform", "translateX(-120vw)");
-            }
-          },
 
           afterRender: function () {
             $.scrollify.move("#anchor-0"); // Start at preview
           },
         });
       });
-
 
