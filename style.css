@@ -21,7 +21,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: #fff;
         background: #f6f5f3;
         z-index: 5;
       }
@@ -76,4 +75,5 @@
       body:not(.layout-active) .h-panels {
         transform: translateX(-40vw); /* show all 3 panels as preview */
       }
+
 
