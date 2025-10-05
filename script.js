@@ -226,13 +226,13 @@
               // Step 1: Intermediate state (still preview layout)
               $body.addClass("layout-active");
               $h.addClass("fixed-layout")
-                .css("transform", "translateX(-40vw)")
+                .css("transform", "translateX(0vw)")
                 .css("z-index", "0");
               $leftText.addClass("fixed-layout");
 
               $h1.css("transform", "translateX(0vw)");
-              $h2.css("transform", "translateX(-40vw)");
-              $h3.css("transform", "translateX(-120vw)");
+              $h2.css("transform", "translateX(-80vw)");
+              $h3.css("transform", "translateX(-160vw)");
 
               panels.eq(2).addClass("active");
             } else if (i === 2 || i === 3 || i === 4) {
@@ -281,4 +281,5 @@
           },
         });
       });
+
 
