@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     const tabMenu = document.querySelector('.use_case_tabs_menu');
 
     if (!tabMenu) return;
@@ -36,4 +36,41 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'auto'
         });
     }
+});*/
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.use_case_tab_link');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            tabs.forEach(t => {
+                t.classList.remove('w--current');
+
+                const overflow = t.querySelector('.use_case_overflow');
+                if (overflow) {
+                    overflow.style.height = '0'; // collapse others
+                }
+            });
+
+            // Make clicked tab active
+            tab.classList.add('w--current');
+
+            const overflow = tab.querySelector('.use_case_overflow');
+            if (overflow) {
+                overflow.style.height = overflow.scrollHeight + 'px'; // expand smoothly
+            }
+        });
+    });
+
+    // Set initial active tab height
+    const initial = document.querySelector('.use_case_tab_link.w--current');
+    if (initial) {
+        const overflow = initial.querySelector('.use_case_overflow');
+        if (overflow) {
+            overflow.style.height = overflow.scrollHeight + 'px';
+        }
+    }
 });
+
+
