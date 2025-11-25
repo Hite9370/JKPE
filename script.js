@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-  const swiper = new Swiper(".mySwiper", {
+  const swiper = new Swiper(".swiper", {
     slidesPerView: "auto",
     spaceBetween: 20,
     freeMode: true,
@@ -67,5 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
       prevEl: ".swiper-button-prev",
     },
   });
+
 
 
