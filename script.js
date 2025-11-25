@@ -63,10 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
     spaceBetween: 20,
     freeMode: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".button-next",
+      prevEl: ".button-prev",
     },
   });
+
 
 
 
