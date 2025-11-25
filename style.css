@@ -1,24 +1,13 @@
 
 /* Main rotating container */
 .model_image_wrap {
-  position: relative;
-  width: 550px;
-  height: 550px;
-  margin: 60px auto;
   animation: rotate 22s linear infinite;
 }
 
 /* Logo styling */
 .model_card {
   position: absolute;
-  width: 130px;
-  padding: 12px 20px;
-  background: white;
-  border-radius: 30px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  font-size: 15px;
-  font-weight: 500;
   transform: translate(-50%, -50%);
   animation: upright 22s linear infinite;
 }
@@ -59,3 +48,4 @@
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
+
