@@ -49,3 +49,6 @@
   to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
+.use_case_tab_link.w--current .use_case_overflow{
+      height: 100%;
+}
