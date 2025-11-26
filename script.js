@@ -85,28 +85,38 @@ const swiper2 = new Swiper(".testimonials", {
   },
 });*/
 
-// Slider 1
-const slider1Container = document.querySelector(".swiper");
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Slider 1 (first .swiper in your HTML) ---
+  const slider1Container = document.querySelector('.swiper');
+  if (slider1Container) {
+    const prevBtn1 = slider1Container.previousElementSibling?.previousElementSibling;
+    const nextBtn1 = slider1Container.previousElementSibling;
 
-const swiper1 = new Swiper(slider1Container, {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  navigation: {
-    nextEl: slider1Container.previousElementSibling,     // .button-next
-    prevEl: slider1Container.previousElementSibling.previousElementSibling, // .button-prev
-  },
-});
+    const swiper1 = new Swiper(slider1Container, {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      // do NOT pass navigation here — we attach handlers manually
+    });
 
-// Slider 2
-const slider2Container = document.querySelector(".testimonials");
+    if (nextBtn1) nextBtn1.addEventListener('click', (e) => { e.preventDefault(); swiper1.slideNext(); });
+    if (prevBtn1) prevBtn1.addEventListener('click', (e) => { e.preventDefault(); swiper1.slidePrev(); });
+  }
 
-const swiper2 = new Swiper(slider2Container, {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  navigation: {
-    nextEl: slider2Container.previousElementSibling,     // .testimonials-button-next
-    prevEl: slider2Container.previousElementSibling.previousElementSibling, // .testimonials-button-prev
-  },
+  // --- Slider 2 (the .testimonials slider) ---
+  const slider2Container = document.querySelector('.testimonials');
+  if (slider2Container) {
+    const prevBtn2 = slider2Container.previousElementSibling?.previousElementSibling;
+    const nextBtn2 = slider2Container.previousElementSibling;
+
+    const swiper2 = new Swiper(slider2Container, {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      // manual handlers below
+    });
+
+    if (nextBtn2) nextBtn2.addEventListener('click', (e) => { e.preventDefault(); swiper2.slideNext(); });
+    if (prevBtn2) prevBtn2.addEventListener('click', (e) => { e.preventDefault(); swiper2.slidePrev(); });
+  }
 });
 
 
