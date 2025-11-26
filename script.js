@@ -67,6 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 
+  const swiper = new Swiper(".testimonials", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".testimonials-button-next",
+      prevEl: ".testimonials-button-prev",
+    },
+  });
+
+
 
 
 
