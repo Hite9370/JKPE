@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });*/
 
-const swiper1 = new Swiper(".swiper", {
+/*const swiper1 = new Swiper(".swiper", {
   slidesPerView: 3,
   spaceBetween: 20,
   navigation: {
@@ -82,6 +82,30 @@ const swiper2 = new Swiper(".testimonials", {
   navigation: {
     nextEl: ".testimonials-button-next",
     prevEl: ".testimonials-button-prev",
+  },
+});*/
+
+// Slider 1
+const slider1Container = document.querySelector(".swiper");
+
+const swiper1 = new Swiper(slider1Container, {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: slider1Container.previousElementSibling,     // .button-next
+    prevEl: slider1Container.previousElementSibling.previousElementSibling, // .button-prev
+  },
+});
+
+// Slider 2
+const slider2Container = document.querySelector(".testimonials");
+
+const swiper2 = new Swiper(slider2Container, {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: slider2Container.previousElementSibling,     // .testimonials-button-next
+    prevEl: slider2Container.previousElementSibling.previousElementSibling, // .testimonials-button-prev
   },
 });
 
