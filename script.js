@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });*/
 
-const swiper1 = new Swiper(".swiper", {
+const swiper1 = new Swiper(".datasets", {
   slidesPerView: 3,
   spaceBetween: 20,
   navigation: {
@@ -84,6 +84,7 @@ const swiper2 = new Swiper(".testimonials", {
     prevEl: ".testimonial_arrow_wrapper .testimonials-button-prev",
   },
 });
+
 
 
 
